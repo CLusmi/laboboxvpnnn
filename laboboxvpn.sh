@@ -157,15 +157,9 @@ echo ""
 	
 	cd /home/$USER/docker_apps/watchtower && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/01_temp_seedbox
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/01_temp_seedbox/films
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/01_temp_seedbox/series
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/01_temp_seedbox/autres
-	
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/02_actif_seedbox/
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/02_actif_seedbox/films
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/02_actif_seedbox/series
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/02_actif_seedbox/autres
+	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/films
+	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/series
+	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/autres
 	
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/watch
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/watch/films
