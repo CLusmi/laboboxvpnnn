@@ -35,11 +35,7 @@ dpkg-reconfigure locales
 sleep 5
 apt-get update && apt-get upgrade -y
 sleep 5
-apt-get install apt-transport-https sudo git-core curl zip unzip fail2ban htop nano ffmpeg apache2-utils ipcalc -y
-
-#Activation /sbin/modprobe iptable_mangle
-#mkdir /boot/config
-#cp -r includes/go /boot/config
+apt-get install apt-transport-https sudo git-core curl zip unzip fail2ban htop nano ffmpeg apache2-utils ipcalc fuse -y
 
 #Récuperation de l'IP LAN_NETWORK pour "rtorrentvpn"
 file=/etc/network/interfaces
@@ -143,6 +139,7 @@ echo ""
 	cd /home/$USER/docker_apps/portainer && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
 	sed -i "s|%network%|$network|g" /home/labobox/docker_apps/rtorrentvpn/docker-compose.yml
+	
 	cd /home/$USER/docker_apps/rtorrentvpn && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
 	cd /home/$USER/docker_apps/jackett && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
@@ -195,6 +192,3 @@ echo -e "\033[36m##########################################################\033[
 echo ""
 echo -e "\033[32mMerci d'avoir utilisé https://github.com/CLusmi/laboboxvpn\033[0m"
 echo ""
-#echo -e "Vous devez IMPERATIVEMMENT redemarrer le serveur dans quelques minutes ..."
-#read -p "Appuyez sur une touche pour redemarrer"
-#reboot
