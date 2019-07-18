@@ -2,10 +2,10 @@
 
 IP=`wget -qO- ipv4.icanhazip.com`
 TOKEN=%token%
-DL=/home/labobox/plex
-LOG=/home/labobox/plex/plex_dl.log
+DL=/home/labobox/docker_apps/plex
+LOG=/home/labobox/docker_apps/plex/plex_dl.log
 
-cd /home/labobox/plex
+cd /home/labobox/docker_apps/plex
 
 echo "#################################################################################" >> $LOG
 echo "#" >> $LOG
