@@ -41,3 +41,5 @@ sleep 3
 
 sed -i "s|%token%|$token|g" /home/labobox/plex/plex_downloader.sh
 sed -i "s|%token%|$token|g" /home/labobox/plex/plex_updater.sh
+
+(crontab -l 2>/dev/null; echo "0 6 * * * cd /home/labobox/plex && plex_updater.sh") | crontab -
