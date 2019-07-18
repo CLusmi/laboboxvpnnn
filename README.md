@@ -75,7 +75,7 @@ Un USER est créer pendant l'installation. (USER=labobox / UID=1999 / GID=1999)
         
    Redemarrer le CT ...
    
-* Debian 9.
+* Debian 9 & 10
 
 * Un nom de domaine (ou simplement une IP).
 
