@@ -170,11 +170,6 @@ echo ""
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/series
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/autres
 	
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/watch
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/watch/films
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/watch/series
-	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/watch/autres
-	
 	chmod -R 755 /home/$USER/docker_apps
 	chown -R $USER:$USER /home/$USER/docker_apps/rtorrentvpn/data
 
