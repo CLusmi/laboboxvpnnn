@@ -115,6 +115,7 @@ echo -e "\033[36m** Modification de l'\033[35mUID \033[36met du \033[35mGID \033
 	groupmod -g 1999 $USER
 	usermod -aG docker $USER
 	cp -r docker_apps /home/$USER
+	chmod -R 755 /home/$USER/docker_apps
 	
 echo ""
 read -p "Appuyez sur une touche pour installer les applications"
