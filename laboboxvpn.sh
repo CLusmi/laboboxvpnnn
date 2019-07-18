@@ -165,6 +165,7 @@ echo ""
 read -p "Appuyez sur une touche pour CONTINUER"
 echo ""
 	
+	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/films
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/series
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/autres
