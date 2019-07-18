@@ -119,20 +119,24 @@ echo -e "\033[36m** Modification de l'\033[35mUID \033[36met du \033[35mGID \033
 echo ""
 read -p "Appuyez sur une touche pour installer les applications"
 echo ""
-		echo -e "\033[33m***** Un token est nécéssaire pour AUTHENTIFIER le serveur Plex *****\033[0m"
-		echo -e "\033[33m****    Pour l'obtenir, rendez-vous sur l'adresse suivante :     ****\033[0m"
-		echo -e "\033[36m                    https://www.plex.tv/claim/\033[0m"
-		echo -e "\033[33m                       Collez-le ci-dessous \033[0m"
-		echo ""
-		read -rp "CLAIM = " CLAIM
-		if [ -n "$CLAIM" ]
-		then
-			sed -i "s|%CLAIM%|$CLAIM|g" /home/$USER/docker_apps/plex/docker-compose.yml
-		fi
-		echo ""
-		echo -e "\033[33m*****             Votre token a bien été ajouté                 *****\033[0m"
+#		echo -e "\033[33m***** Un token est nécéssaire pour AUTHENTIFIER le serveur Plex *****\033[0m"
+#		echo -e "\033[33m****    Pour l'obtenir, rendez-vous sur l'adresse suivante :     ****\033[0m"
+#		echo -e "\033[36m                    https://www.plex.tv/claim/\033[0m"
+#		echo -e "\033[33m                       Collez-le ci-dessous \033[0m"
+#		echo ""
+#		read -rp "CLAIM = " CLAIM
+#		if [ -n "$CLAIM" ]
+#		then
+#			sed -i "s|%CLAIM%|$CLAIM|g" /home/$USER/docker_apps/plex/docker-compose.yml
+#		fi
+#		echo ""
+#		echo -e "\033[33m*****             Votre token a bien été ajouté                 *****\033[0m"
+
+		echo -e "\033[33m***** Recuperation du token de votre compte PLEX *****\033[0m"
 		
-	cd /home/$USER/docker_apps/plex && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
+	cd /home/$USER/docker_apps/plex && ./plex_token.sh
+	
+	cd /home/$USER/docker_apps/plex && ./plex_download.sh
 
 	cd /home/$USER/docker_apps/heimdall && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
