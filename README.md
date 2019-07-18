@@ -20,8 +20,8 @@ Un USER est créer pendant l'installation. (USER=labobox / UID=1999 / GID=1999)
     Sonarr                    -> image : linuxserver/sonarr:latest
     Ombi                      -> image : linuxserver/ombi:latest
     Tautulli                  -> image : linuxserver/tautulli:latest
-    Plex                      -> image : plexinc/pms-docker:latest
     Watchtower                -> image : containrrr/watchtower:latest
+    Plex                      -> Installé en dur sur le serveur avec script de mise a jour automatique.
 
 *Prérequis :
 -------------------------------------------------------------
@@ -120,8 +120,6 @@ Pour ajouter/supprimer un login :
 
 *Liez votre compte PLEX via tunnel SSH.
 -------------------------------------------------------------
-
- -> Si la liaison via le "CLAIM" n'a pas fonctionné ...
 
 Sous PUTTY, Entrez votre adresse ip :
 
