@@ -139,7 +139,7 @@ echo ""
 	
 	cd /home/$USER/docker_apps/plex && ./plex_downloader.sh
 	
-	(crontab -l 2>/dev/null; echo "0 6 * * * cd /home/labobox/docker_apps/plex && plex_updater.sh") | crontab -
+	(crontab -l 2>/dev/null; echo "0 6 * * * cd /home/labobox/docker_apps/plex && ./plex_updater.sh") | crontab -
 
 	cd /home/$USER/docker_apps/heimdall && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
