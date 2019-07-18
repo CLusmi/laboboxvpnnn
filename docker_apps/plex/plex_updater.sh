@@ -33,7 +33,11 @@ then
         echo "# $newplex est plus reçent que $currentplex" >> $LOG
         echo "# Installation de la nouvelle version de PlexMediaServer." >> $LOG
         echo "#" >> $LOG
+        service plexmediaserver stop
+        sleep 3
         /usr/bin/dpkg -i $DL/plex.deb >> $LOG
+        sleep 3
+        service plexmediaserver restart
         echo "#" >> $LOG
         echo "# Nous rennomons la version télécharger en : plex.$newplex.deb" >> $LOG
         mv $DL/plex.deb $DL/plex.$newplex.deb
