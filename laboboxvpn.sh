@@ -161,6 +161,10 @@ echo ""
 	
 	cd /home/$USER/docker_apps/watchtower && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
+echo ""
+read -p "Appuyez sur une touche pour CONTINUER"
+echo ""
+	
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/films
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/series
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/autres
@@ -170,6 +174,7 @@ echo ""
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/watch/series
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/watch/autres
 	
+	chmod -R 755 /home/$USER/docker_apps
 	chown -R $USER:$USER /home/$USER/docker_apps/rtorrentvpn/data
 
 echo ""
