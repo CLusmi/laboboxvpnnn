@@ -3,7 +3,7 @@
 IP=`wget -qO- ipv4.icanhazip.com`
 TOKEN=%token%
 DL=/home/labobox/docker_apps/plex
-LOG=/home/labobox/docker_apps/plexplex_dl.log
+LOG=/home/labobox/docker_apps/plex/plex_scripts.log
 
 cd /home/labobox/docker_apps/plex
 
