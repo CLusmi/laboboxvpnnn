@@ -39,5 +39,5 @@ token=$X_PLEX_TOKEN
 
 sleep 3
 
-sed -i "s|%token%|$token|g" /home/labobox/plex/plex_dl.sh
-sed -i "s|%token%|$token|g" /home/labobox/plex/plex_update.sh
+sed -i "s|%token%|$token|g" /home/labobox/plex/plex_downloader.sh
+sed -i "s|%token%|$token|g" /home/labobox/plex/plex_updater.sh
