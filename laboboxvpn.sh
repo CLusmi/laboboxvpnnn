@@ -161,12 +161,6 @@ echo -e "\033[33m***** Recuperation du token de votre compte PLEX *****\033[0m"
 	
 	cd /home/$USER/docker_apps/watchtower && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
-	docker exec -it rtorrentvpn /home/nobody/deluser.sh admin
-	
-echo ""
-read -p "Appuyez sur une touche pour CONTINUER"
-echo ""
-	
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/films
 	mkdir /home/$USER/docker_apps/rtorrentvpn/data/torrents/series
@@ -186,8 +180,11 @@ echo ""
 	echo ""
 	echo -e "\033[36mCe sera vos identifiants de connexion a ruTorrent.\033[0m"
 	echo ""
-	docker exec -it rtorrentvpn /home/nobody/createuser.sh $login $password
+	echo -e "\033[36mSuppression de l'utilisateur ADMIN.\033[0m"
 	docker exec -it rtorrentvpn /home/nobody/deluser.sh admin
+	echo ""
+	echo -e "\033[36mAjout de votre utilisateur ...\033[0m"
+	docker exec -it rtorrentvpn /home/nobody/createuser.sh $login $password
 
 echo ""
 echo -e "\033[36m##########################################################\033[0m"
