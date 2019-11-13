@@ -105,7 +105,7 @@ echo -e "\033[36m ####  INSTALLATION DE VOTRE SEEDBOX  #### \033[0m"
 echo ""
 read -p "Appuyez sur une touche pour CONTINUER"
 echo ""
-echo -e "\033[36m** Création de l'utilisateur -- \033[35mlabobox \033[36m-- **\033[0m"
+echo -e "\033[36m** Création de l'utilisateur debian -- \033[35mlabobox \033[36m-- **\033[0m"
 echo ""
 	adduser $USER
 echo ""
@@ -133,7 +133,7 @@ echo ""
 #		echo ""
 #		echo -e "\033[33m*****             Votre token a bien été ajouté                 *****\033[0m"
 
-		echo -e "\033[33m***** Recuperation du token de votre compte PLEX *****\033[0m"
+echo -e "\033[33m***** Recuperation du token de votre compte PLEX *****\033[0m"
 		
 	cd /home/$USER/docker_apps/plex && ./plex_token.sh
 	
@@ -149,6 +149,19 @@ echo ""
 	
 	cd /home/$USER/docker_apps/rtorrentvpn && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
+	echo ""
+	echo -e "\033[36mVeuillez entrer votre LOGIN pour acces a ruTorrent.\033[0m"
+	echo ""
+	read login
+	echo ""
+	echo -e "\033[36mVeuillez entrer votre PASSWORD pour acces a ruTorrent.\033[0m"
+	echo ""
+	read password
+	echo ""
+	echo -e "\033[36mCe sera vos identifiants de connexion a ruTorrent.\033[0m"
+	echo ""
+	docker exec -it rtorrentvpn /home/nobody/createuser.sh $login $password
+	
 	cd /home/$USER/docker_apps/jackett && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
 	cd /home/$USER/docker_apps/radarr && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
@@ -160,6 +173,8 @@ echo ""
 	cd /home/$USER/docker_apps/tautulli && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
 	cd /home/$USER/docker_apps/watchtower && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
+	
+	docker exec -it rtorrentvpn /home/nobody/deluser.sh admin
 	
 echo ""
 read -p "Appuyez sur une touche pour CONTINUER"
