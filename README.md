@@ -6,9 +6,11 @@ Lien AirVPN -> https://airvpn.org/?referred_by=446192
 
 -------------
 
-Testé sur : VM Proxmox (qemu) Debian 9 & 10 -> OK (13/11/2019)
-            CT Proxmox (LXC)  Debian 9      -> OK (13/11/2019)
-            Serveur DEDIE     Debian 9 & 10 -> OK (13/11/2019)
+Testé sur : 
+
+    VM Proxmox (qemu) Debian 9 & 10 -> OK (13/11/2019)
+    CT Proxmox (LXC)  Debian 9      -> OK (13/11/2019)
+    Serveur DEDIE     Debian 9 & 10 -> OK (13/11/2019)
 
 -------------
 
