@@ -6,7 +6,9 @@ Lien AirVPN -> https://airvpn.org/?referred_by=446192
 
 -------------
 
-Testé sur VM Proxmox (qemu), CT Proxmox (LXC), Serveur DEDIE / Debian 9 (stretch)  -> OK (15/06/2019)
+Testé sur : VM Proxmox (qemu) Debian 9 & 10 -> OK (13/11/2019)
+            CT Proxmox (LXC)  Debian 9      -> OK (13/11/2019)
+            Serveur DEDIE     Debian 9 & 10 -> OK (13/11/2019)
 
 -------------
 
@@ -109,10 +111,7 @@ Toutes ces etapes effectuées, connectez vous à votre machine (VM, CT, ou dédi
     
 *ruTorrent
 ------------------------------------------------------------- 
-    
-    Login : admin
-    Pass  : rutorrent
-    
+
 Pour ajouter/supprimer un login : 
 
     docker exec -it rtorrentvpn /home/nobody/createuser.sh <username a creer>
