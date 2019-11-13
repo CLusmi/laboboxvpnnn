@@ -149,19 +149,6 @@ echo -e "\033[33m***** Recuperation du token de votre compte PLEX *****\033[0m"
 	
 	cd /home/$USER/docker_apps/rtorrentvpn && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
-	echo ""
-	echo -e "\033[36mVeuillez entrer votre LOGIN pour acces a ruTorrent.\033[0m"
-	echo ""
-	read login
-	echo ""
-	echo -e "\033[36mVeuillez entrer votre PASSWORD pour acces a ruTorrent.\033[0m"
-	echo ""
-	read password
-	echo ""
-	echo -e "\033[36mCe sera vos identifiants de connexion a ruTorrent.\033[0m"
-	echo ""
-	docker exec -it rtorrentvpn /home/nobody/createuser.sh $login $password
-	
 	cd /home/$USER/docker_apps/jackett && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
 	
 	cd /home/$USER/docker_apps/radarr && COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d
@@ -187,6 +174,20 @@ echo ""
 	
 	chmod -R 755 /home/$USER/docker_apps
 	chown -R $USER:$USER /home/$USER/docker_apps/rtorrentvpn/data
+	
+	echo ""
+	echo -e "\033[36mVeuillez entrer votre LOGIN pour acces a ruTorrent.\033[0m"
+	echo ""
+	read login
+	echo ""
+	echo -e "\033[36mVeuillez entrer votre PASSWORD pour acces a ruTorrent.\033[0m"
+	echo ""
+	read password
+	echo ""
+	echo -e "\033[36mCe sera vos identifiants de connexion a ruTorrent.\033[0m"
+	echo ""
+	docker exec -it rtorrentvpn /home/nobody/createuser.sh $login $password
+	docker exec -it rtorrentvpn /home/nobody/deluser.sh admin
 
 echo ""
 echo -e "\033[36m##########################################################\033[0m"
