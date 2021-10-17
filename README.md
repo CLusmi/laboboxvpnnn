@@ -96,7 +96,7 @@ Toutes ces etapes effectuées, connectez vous à votre machine (VM, CT, ou dédi
 
     apt-get update && apt-get upgrade -y
     apt-get install git nano -y
-    rm -rf cd /opt/laboboxvpn
+    rm -rf /opt/laboboxvpn
     git clone https://github.com/CLusmi/laboboxvpn.git /opt/laboboxvpn
     cd /opt/laboboxvpn
     chmod 755 laboboxvpn.sh laboboxvpndel.sh
